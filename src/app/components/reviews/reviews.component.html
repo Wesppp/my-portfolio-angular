@@ -1,0 +1,14 @@
+<ul class="reviews" *ngIf="!loading; else load">
+    <li [@addReview]="animate" class="review-item" *ngFor="let review of reviews">
+      <h4>{{ review.name }}</h4>
+      <small>{{ review.email }}</small>
+      <p>{{ review.text }}</p>
+    </li>
+</ul>
+<ng-template #load>
+  <div class="loading">
+    <div class="spinner-grow text-warning" role="status">
+      <span class="visually-hidden">Загрузка...</span>
+    </div>
+  </div>
+</ng-template>

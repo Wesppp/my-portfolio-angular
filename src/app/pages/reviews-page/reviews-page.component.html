@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="wrapper">
+    <h1>
+      Send your feedback
+    </h1>
+
+    <form [formGroup]="reviewForm"
+          (ngSubmit)="postReview(reviewForm.value.name, reviewForm.value.text, reviewForm.value.email)">
+      <div class="mb-3">
+        <div class="first-line">
+          <input type="text" class="form-control" id="name" name="name"
+                 placeholder="Your name" formControlName="name">
+          <input type="email" class="form-control" id="email" name="email"
+                 placeholder="Email address" formControlName="email">
+        </div>
+      </div>
+      <div class="mb-3">
+      <textarea class="form-control message" id="message" rows="5"
+                placeholder="Message" name="message" formControlName="text"></textarea>
+      </div>
+      <button type="submit" [disabled]="reviewForm.invalid" class="btn btn-primary">Send feedback</button>
+      <div class="validator"
+           *ngIf="reviewForm.get('name')?.touched || reviewForm.get('email')?.touched">
+        <small *ngIf="reviewForm.get('email')?.errors?.['required'] ||
+                      reviewForm.get('name')?.errors?.['required'] ||
+                      reviewForm.get('text')?.errors?.['required']">Fields cannot be empty </small>
+        <small *ngIf="reviewForm.get('email')?.errors?.['email']">Enter the correct email </small>
+        <small *ngIf="reviewForm.get('name')?.errors?.['minlength']">Minimum of 4 characters in the name </small>
+      </div>
+    </form>
+  </div>
+
+  <app-reviews></app-reviews>
+</div>

@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="card">
+    <h1 [@loopFlash]="animate">My projects</h1>
+
+    <div class="card-body">
+      <p class="card-text card-main-text">
+        So far, I have little experience in creating my own angular applications, but there are still small projects, you can see them below in my github.
+        Follow the <a href="https://github.com/Wesppp">link</a> to see more
+      </p>
+    </div>
+  </div>
+
+  <div class="technologies">
+    <ul class="technologies-list">
+      <li *ngFor="let card of projects">
+        <div class="card" style="width: 18rem;">
+          <img [src]="card.img" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">{{ card.text }}</p>
+            <a [href]="card.href" class="btn btn-primary">see more</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

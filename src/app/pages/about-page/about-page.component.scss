@@ -1,0 +1,39 @@
+.card {
+  margin: 0 auto;
+  max-width:600px;
+  padding: 5rem 0;
+
+  .card-text {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    background: #CF00CF;
+    background: linear-gradient(to right, #CF00CF 53%, #8D1BCF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.technologies-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style-type: none;
+  grid-gap: 2rem;
+
+  li {
+    text-align: center;
+
+    img {
+      width: 100px;
+      height: 100px;
+      opacity: .5;
+      transition: .2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

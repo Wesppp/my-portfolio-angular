@@ -1,0 +1,41 @@
+.card {
+  margin-top: 6rem;
+  .card-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+  }
+
+  .card-text {
+    font-size: 1.1rem;
+  }
+
+  .card-body {
+    padding: 1rem 1rem 0rem 1rem;
+  }
+
+  img {
+    width: 55%;
+  }
+
+  .social {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 0;
+
+    li {
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  .btn-danger {
+    font-weight: 600;
+  }
+}
+

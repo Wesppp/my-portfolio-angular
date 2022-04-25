@@ -1,0 +1,31 @@
+.card {
+  margin: 3rem auto 0 auto;
+  max-width:600px;
+
+  .card-main-text {
+    font-size: 1.2rem;
+
+    a {
+      color: rgba(255, 255, 0, 0.85);
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+    background: #CF00CF;
+    background: linear-gradient(to right, #CF00CF 53%, #8D1BCF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.technologies-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style-type: none;
+  grid-gap: 2rem;
+
+  li {
+    text-align: center;
+  }
+}

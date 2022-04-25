@@ -1,0 +1,31 @@
+<header>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-brand">
+        <a routerLink="/home-page">My Portfolio</a>
+      </div>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home-page" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about-page" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/projects-page" routerLinkActive="active">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reviews-page" routerLinkActive="active">Reviews</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<hr>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+
+

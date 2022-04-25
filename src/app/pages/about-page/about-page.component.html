@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="card">
+    <h1 [@loopFlash]="animate">About me</h1>
+
+    <div class="card-body">
+      <p class="card-text">
+        I am studying in Gomel with a degree in Software for Information Technologies. I am interested in Frontend and am developing in this direction. (Currently studying angular)
+      </p>
+    </div>
+  </div>
+
+  <div class="technologies">
+    <ul class="technologies-list">
+      <li *ngFor="let logo of logos"
+          class="technologies-list-item">
+        <img [src]="logo">
+      </li>
+    </ul>
+  </div>
+</div>

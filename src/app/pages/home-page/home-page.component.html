@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="avatar">
+    <img src="./assets/icons/avatar.svg" class="card-img-top"
+         alt="My Avatar" [@loopBounce]="bounce">
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">Misha Shesnovich</h5>
+      <p class="card-text">Beginner angular developer</p>
+    <ul class="social">
+      <li *ngFor="let icon of icons">
+        <a href="#">
+          <img [src]="icon">
+        </a>
+      </li>
+    </ul>
+  </div>
+  <a href="#" class="btn btn-danger" routerLink="/about-page">View information</a>
+</div>
+
+
