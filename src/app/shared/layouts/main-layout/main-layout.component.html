@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar">
+  <nav class="navbar" *ngIf="!isAdaptive">
     <div class="container-fluid">
       <div class="navbar-brand">
         <a routerLink="/home-page">My Portfolio</a>
@@ -17,6 +17,22 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/reviews-page" routerLinkActive="active">Reviews</a>
         </li>
+      </ul>
+    </div>
+  </nav>
+  <nav class="navbar adaptive-nav" *ngIf="isAdaptive">
+    <div class="navbar-brand">
+      <a routerLink="/home-page">My Portfolio</a>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Menu
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" routerLink="/about-page">About</a></li>
+        <li><a class="dropdown-item" routerLink="/home-page">Home</a></li>
+        <li><a class="dropdown-item" routerLink="/projects-page">Projects</a></li>
+        <li><a class="dropdown-item" routerLink="/reviews-page">Reviews</a></li>
       </ul>
     </div>
   </nav>

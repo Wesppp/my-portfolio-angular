@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {BehaviorSubject, catchError, Observable, of} from "rxjs";
+import {BehaviorSubject, catchError, finalize, Observable, of} from "rxjs";
 import {Review} from "../interfaces/review";
 
 @Injectable({
@@ -8,7 +8,7 @@ import {Review} from "../interfaces/review";
 })
 export class ReviewService {
   private reviewsUrl = 'api/reviews';
-
+  isDisabled: boolean = false
   update = new BehaviorSubject<any>('');
   updateObservable$ = this.update.asObservable();
 
@@ -27,8 +27,12 @@ export class ReviewService {
   }
 
   postReview(review: Review):Observable<Review> {
+    if (this.isDisabled) {return of()}
+    this.isDisabled = true
+
     return this.http.post<Review>(this.reviewsUrl, review, this.httpOptions).pipe(
-      catchError(this.handleError<Review>('add review'))
+      catchError(this.handleError<Review>('add review')),
+      finalize(() => this.isDisabled = false)
     )
   }
 

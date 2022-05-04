@@ -29,7 +29,6 @@ header {
 
     a {
       color: #fff;
-      font-weight: 500;
       transition: .5s;
       font-weight: 600;
       font-size: 1.2rem;
@@ -54,5 +53,6 @@ header {
   align-items: center;
 }
 
-
-
+.adaptive-nav {
+  padding: 0 0.5rem;
+}

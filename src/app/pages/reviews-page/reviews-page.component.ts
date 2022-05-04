@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Review} from "../../shared/interfaces/review";
 import {ReviewService} from "../../shared/services/review.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
@@ -13,7 +13,8 @@ export class ReviewsPageComponent implements OnInit {
   // @ts-ignore
   reviewForm: FormGroup;
 
-  constructor(private reviewService: ReviewService) {}
+  constructor(private reviewService: ReviewService) {
+  }
 
   ngOnInit(): void {
     this.reviewForm = new FormGroup({
@@ -38,11 +39,10 @@ export class ReviewsPageComponent implements OnInit {
       this.reviewService.postReview({name, text, email} as Review)
         .subscribe(review => {
           if (review) {
-            console.log(review)
             this.reviewService.updateComponent(review)
+            this.reviewForm.reset()
           }
         }, error => console.log(error.message))
     }
   }
-
 }

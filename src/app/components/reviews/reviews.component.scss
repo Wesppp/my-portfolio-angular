@@ -1,6 +1,22 @@
 ul {
   list-style-type: none;
   margin-top: 2rem;
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(77, 75, 157, 0.15);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #4b4ba8;    /* цвет плашки */
+    border-radius: 23px;       /* закругления плашки */
+  }
 
   li {
     margin: 1rem 0;

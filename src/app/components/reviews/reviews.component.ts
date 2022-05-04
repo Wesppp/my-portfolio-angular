@@ -26,10 +26,7 @@ export class ReviewsComponent implements OnInit {
 
     this.reviewService.updateObservable$.subscribe(review => {
       if(review) {
-        let deletedReview = this.reviews.shift()
         this.reviews.push(review)
-        if (deletedReview)
-        this.reviewService.deleteReview(deletedReview.id).subscribe()
       }
     })
   }

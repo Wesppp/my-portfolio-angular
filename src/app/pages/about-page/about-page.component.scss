@@ -37,3 +37,15 @@
     }
   }
 }
+
+@media (max-width: 670px) {
+  .technologies-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 475px) {
+  .technologies-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
